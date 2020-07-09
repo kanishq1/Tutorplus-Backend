@@ -19,7 +19,7 @@ app.get('*', (req, res) => {
 
 let id;
 app.post('/register', (req, res) => {
-  const { name, email, phone, class1, gender, subject } = req.body;
+  const { studentName, parentName, email, phone, subject, class1, message } = req.body;
 
   //   const spreadsheet = {
   //     sheet1: {
@@ -47,7 +47,7 @@ app.post('/register', (req, res) => {
       valueInputOption: 'RAW',
       insertDataOption: 'INSERT_ROWS',
       resource: {
-        values: [[name, email, phone, class1, gender, cur_date, subject]],
+        values: [[studentName, parentName, email, phone, subject, class1, message, cur_date]],
       },
     };
 
